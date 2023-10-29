@@ -20,8 +20,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8000
 
 # Run any additional setup commands (e.g., migrations or collectstatic)
-# RUN python manage.py migrate
-# RUN python manage.py collectstatic --noinput
+RUN python manage.py makemigrations
+RUN python manage.py migrate
 
 # Start the Django development server (customize as needed)
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
